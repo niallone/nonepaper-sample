@@ -237,7 +237,6 @@ class DataModel
     public static function setArticlePostId(int $articleId, array $postId) : int
     {
         try {
-            //$postId = wp_insert_post($postArray);
             self::$dbo->query('update feedly_stories set post_id = '.$postId.' where id = '.$articleId);
             return $postId;
         } catch (NonepaperException $e) {
